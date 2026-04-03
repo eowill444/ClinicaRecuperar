@@ -1,0 +1,512 @@
+/* Variáveis de Cores e Estilos Globais */
+:root {
+    --primary-color: #3b5037; /* Verde escuro do logo */
+    --secondary-color: #6b8e23; /* Verde claro/oliva */
+    --accent-color: #d18b45; /* Laranja terra/madeira do logo */
+    --bg-light: #f4f7f5;
+    --text-dark: #2c3e2b;
+    --text-light: #666;
+    --white: #ffffff;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    font-size: 1.1em;
+}
+
+/* Botões */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #b5763a;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    /* Use a imagem de fundo enviada aqui */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('img/IMG_4946.PNG') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Cards (Estrutura e Terapias) */
+.grid-features, .grid-therapies, .grid-team {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-features {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid-therapies {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.image-card {
+    border-bottom: 4px solid var(--accent-color);
+}
+
+/* Equipe */
+.grid-team {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.agenda-box h3{
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+.team-member {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.team-member .avatar {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   ESTILO DO FORMULÁRIO DE CONTATO
+   ========================================= */
+
+.contact-form {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4); /* Fundo escuro translúcido */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* Fonte elegante */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Estilo dos Inputs e Textarea */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Foco nos campos */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #d4af37; /* Dourado */
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Botão Estilizado */
+.btn-secondary {
+    background-color: #d4af37; /* Tom de ouro/bronze */
+    color: #fff;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #b8962e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .contact-form h3 {
+        font-size: 20px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9em;
+}
+
+/*------------------------------------*/
+
+
+.footer-social h4 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Espaço entre os ícones */
+}
+
+.social-icons a {
+    color: #ccc; /* Cor inicial dos ícones */
+    font-size: 26px; /* Tamanho dos ícones */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efeito Hover - Cor de destaque (Dourado para manter o padrão) */
+.social-icons a:hover {
+    color: var(--secondary-color); 
+    transform: translateY(-5px); /* Efeito de subir levemente ao passar o mouse */
+}
+
+/* Cores específicas no hover (Opcional) */
+/* .social-icons a:hover .fa-instagram { color: #E1306C; } */
+/* .social-icons a:hover .fa-whatsapp { color: #25D366; } */
+/* .social-icons a:hover .fa-facebook-f { color: #1877F2; } */
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* =========================================
+   ESTILO DAS FASES DO TRATAMENTO
+   ========================================= */
+
+.Fases-section .section-title {
+    color: var(--primary-color);
+}
+
+.grid-fases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Base do Card de Fase (Luxo) */
+.card-fase {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: left; /* Alinhamento à esquerda para leitura de texto */
+    border-top: 6px solid; /* Borda de cor em cima */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-fase:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho do Card */
+.fase-header {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.fase-number {
+    font-size: 3em;
+    font-weight: 700;
+    color: #e0e0e0; /* Número grande e sutil de fundo */
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.fase-header h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+
+/* Tags de Status */
+.fase-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+/* Conteúdo */
+.fase-content p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.fase-objectives {
+    list-style: none;
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+.fase-objectives li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilização por Cor (Inspirado no logo e intensidade) */
+
+/* Fase Vermelha (Início - Cor Terra do Logo) */
+.fase-red {
+    border-top-color: var(--accent-color);
+}
+.fase-red .fase-number { color: #fdf2e9; } /* Fundo terra muito claro */
+.tag-v { background-color: var(--accent-color); }
+
+/* Fase Azul (Meio - Cor Principal Verde Escuro) */
+.fase-blue {
+    border-top-color: var(--primary-color);
+}
+.fase-blue .fase-number { color: #e9f0ea; } /* Fundo verde muito claro */
+.tag-a { background-color: var(--primary-color); }
+
+/* Fase Verde (Fim - Cor Oliva Claro do Logo) */
+.fase-green {
+    border-top-color: var(--secondary-color);
+}
+.fase-green .fase-number { color: #f2f7ea; } /* Fundo oliva muito claro */
+.tag-vd { background-color: var(--secondary-color); }
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .fase-header h3 {
+        font-size: 1.4em;
+    }
+    .fase-content p {
+        font-size: 0.9em;
+    }
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    
+}
